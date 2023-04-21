@@ -38,6 +38,7 @@ const App = ({ signOut }) => {
         return note;
       })
     );
+    setNotes([]);
     setNotes(notesFromAPI);
   }
 
