@@ -68,14 +68,6 @@ const App = ({ signOut }) => {
       variables: { input: { id } },
     });
   }
-  const[totalPrice,setTotalPrice]=(0);
-  function calculateTotal() {
-    let total = 0;
-    notes.forEach((note) => {
-      total += parseFloat(note.price);
-    });
-    setTotalPrice(total);
-  }
   return (
     <View className="App">
       <Heading level={1}>shopping list</Heading>
@@ -140,8 +132,6 @@ const App = ({ signOut }) => {
     <Button variation="link" onClick={() => deleteNote(note)}>
       Delete note
     </Button>
-    <Button onClick={calculateTotal}>Calculate Total</Button>
-<Text>Total Price: {totalPrice}</Text>
   </Flex>
 ))}
       </View>
