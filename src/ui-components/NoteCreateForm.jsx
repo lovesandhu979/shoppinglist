@@ -220,9 +220,7 @@ export default function NoteCreateForm(props) {
             isDisabled={Object.values(errors).some((e) => e?.hasError)}
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
-          <Button variation="danger" onClick={eraseAllNotes}>Erase All</Button>
-
-        </Flex>
+         </Flex>
       </Flex>
     </Grid>
   );

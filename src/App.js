@@ -68,20 +68,6 @@ const App = ({ signOut }) => {
       variables: { input: { id } },
     });
   }
-  async function eraseAllNotes() {
-    const newNotes = [];
-    for (const note of notes) {
-      if (note.image) {
-        await Storage.remove(note.name);
-      }
-      await API.graphql({
-        query: deleteNoteMutation,
-        variables: { input: { id: note.id } },
-      });
-    }
-    setNotes(newNotes);
-  }
-
   return (
     <View className="App">
       <Heading level={1}>shopping list</Heading>
@@ -142,6 +128,7 @@ const App = ({ signOut }) => {
         style={{ width: 100 }}
       />
     )}
+
     <Button variation="link" onClick={() => deleteNote(note)}>
       Delete note
     </Button>
