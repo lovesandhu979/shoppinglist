@@ -75,7 +75,7 @@ const App = ({ signOut }) => {
         <Flex direction="row" justifyContent="center">
           <TextField
             name="name"
-            placeholder="food Name"
+            placeholder="Food Name"
             label="food Name"
             labelHidden
             variation="quiet"
@@ -83,8 +83,8 @@ const App = ({ signOut }) => {
           />
           <TextField
             name="description"
-            placeholder="food Description"
-            label="food Description"
+            placeholder="Food Description"
+            label="Food Description"
             labelHidden
             variation="quiet"
             required
@@ -121,6 +121,7 @@ const App = ({ signOut }) => {
       {note.name}
     </Text>
     <Text as="span">{note.description}</Text>
+    <Text as="span">{`$${note.price}`}</Text> 
     {note.image && (
       <Image
         src={note.image}
@@ -128,7 +129,7 @@ const App = ({ signOut }) => {
         style={{ width: 100 }}
       />
     )}
-
+    <Text as="h3" fontWeight={700} margin="3rem 0">{`Total: $${notes.reduce((acc, note) => acc + parseInt(note.price), 0)}`}</Text> 
     <Button variation="link" onClick={() => deleteNote(note)}>
       Delete note
     </Button>
