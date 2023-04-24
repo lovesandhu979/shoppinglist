@@ -220,7 +220,7 @@ export default function NoteCreateForm(props) {
             isDisabled={Object.values(errors).some((e) => e?.hasError)}
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
-         </Flex>
+        </Flex>
       </Flex>
     </Grid>
   );
